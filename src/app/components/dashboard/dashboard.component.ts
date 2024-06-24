@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit{
   date:any;
 
 
+
   constructor(private http:HttpClient){
 
   }
@@ -35,7 +36,14 @@ export class DashboardComponent implements OnInit{
         labels: ['MP', 'UP', 'RJ', 'AN', 'CH', 'DL'],
         datasets: [{
           label: 'Bar chart COVID-19',
-          data: [12, 19, 3, 5, 2, 3],
+          data: [
+            this.covidData.MP.delta.confirmed,
+            this.covidData.UP.delta.confirmed,
+            this.covidData.RJ.delta.confirmed,
+            this.covidData.AN.delta.confirmed,
+            this.covidData.CH.delta.confirmed,
+            this.covidData.DL.delta.confirmed,
+          ],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -71,7 +79,14 @@ export class DashboardComponent implements OnInit{
       labels: ['MP', 'UP', 'RJ', 'AN', 'CH', 'DL'],
       datasets: [{
         label: 'list od states',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [
+          this.covidData.MP.total.confirmed,
+          this.covidData.UP.total.confirmed,
+          this.covidData.RJ.total.confirmed,
+          this.covidData.AN.total.confirmed,
+          this.covidData.CH.total.confirmed,
+          this.covidData.DL.total.confirmed,
+        ],
         borderWidth: 1
       }]
     },
