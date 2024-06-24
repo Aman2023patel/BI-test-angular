@@ -18,8 +18,6 @@ export class DashboardComponent implements OnInit{
   total:any;
   date:any;
 
-
-
   constructor(private http:HttpClient){
 
   }
@@ -202,6 +200,8 @@ export class DashboardComponent implements OnInit{
       this.delta = data.MP.delta.confirmed;
       this.total = data.MP.total;
       this.date = data.MP.meta.date;
+      const countdownValue = this.total;
+
     });
   }
 }
