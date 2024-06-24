@@ -72,6 +72,94 @@ export class DashboardComponent implements OnInit{
       }
     });
 
+    const areaChart = new Chart("areachart", {
+      type: 'line',  // Specify the chart type
+      data: {
+        labels: ['MP', 'UP', 'RJ', 'AN', 'CH', 'DL'],
+          datasets: [
+              {
+                  label: 'MP',
+                  data: [
+                    this.covidData.MP.delta.confirmed,
+                    this.covidData.MP.delta.deceased,
+                    this.covidData.MP.delta.recovered,
+                    this.covidData.MP.delta.tested,
+                    this.covidData.MP.delta.vaccinated1,
+                    this.covidData.MP.delta.vaccinated2,
+                  ],
+                  fill: 'origin'
+              },
+              {
+                  label: 'UP',
+                  data: [
+                    this.covidData.UP.delta.confirmed,
+                    this.covidData.UP.delta.deceased,
+                    this.covidData.UP.delta.recovered,
+                    this.covidData.UP.delta.tested,
+                    this.covidData.UP.delta.vaccinated1,
+                    this.covidData.UP.delta.vaccinated2,
+                  ],
+                  fill: '+2'
+              },
+              {
+                  label: 'RJ',
+                  data: [
+                    this.covidData.RJ.delta.confirmed,
+                    this.covidData.RJ.delta.deceased,
+                    this.covidData.RJ.delta.recovered,
+                    this.covidData.RJ.delta.tested,
+                    this.covidData.RJ.delta.vaccinated1,
+                    this.covidData.RJ.delta.vaccinated2,
+                  ],
+                  fill: 1
+              },
+              {
+                  label: 'AN',
+                  data: [
+                    this.covidData.AN.delta.confirmed,
+                    this.covidData.AN.delta.deceased,
+                    this.covidData.AN.delta.recovered,
+                    this.covidData.AN.delta.tested,
+                    this.covidData.AN.delta.vaccinated1,
+                    this.covidData.AN.delta.vaccinated2,
+                  ],
+                  fill: false
+              },
+              {
+                  label: 'CH',
+                  data: [
+                    this.covidData.CH.delta.confirmed,
+                    this.covidData.CH.delta.deceased,
+                    this.covidData.CH.delta.recovered,
+                    this.covidData.CH.delta.tested,
+                    this.covidData.CH.delta.vaccinated1,
+                    this.covidData.CH.delta.vaccinated2,
+                  ],
+                  fill: '-2'
+              },
+              {
+                  label: 'DL',
+                  data: [
+                    this.covidData.DL.delta.confirmed,
+                    this.covidData.DL.delta.deceased,
+                    this.covidData.DL.delta.recovered,
+                    this.covidData.DL.delta.tested,
+                    this.covidData.DL.delta.vaccinated1,
+                    this.covidData.DL.delta.vaccinated2,
+                  ],
+                  fill: {value: 25}
+              }
+          ]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
 
     const pieChart =  new Chart("piechart", {
     type: 'pie',
